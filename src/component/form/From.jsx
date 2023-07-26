@@ -1,7 +1,10 @@
 import "./Form.css";
 
 const Form = () => {
-  return <p>Hello world</p>;
+  return (
+    <input type="text" data-cy="input-form">
+    </input>
+  )
 };
 
 export default Form;
