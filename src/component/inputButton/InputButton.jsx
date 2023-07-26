@@ -1,7 +1,7 @@
 import "./InputButton.css";
 
 const InputButton = () => {
-  return <button>Hi</button>;
+  return <button data-cy="input-button">Add Note!</button>;
 };
 
 export default InputButton;
