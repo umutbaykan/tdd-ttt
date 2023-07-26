@@ -15,6 +15,11 @@ describe("TodoContainer component", () => {
 
   it("renders a list of todos", () => {
     cy.mount(<TodoContainer todos={todos} />);
-    cy.getByCyLike("todo").should("have.length", 2);
+    cy.getByCyLike("todo").should("have.length", 3);
+  });
+
+  it("has a header saying TODO LIST", () => {
+    cy.mount(<TodoContainer todos={todos} />);
+    cy.getByCy("todo-header").should("have.text", "TODO LIST");
   });
 });
