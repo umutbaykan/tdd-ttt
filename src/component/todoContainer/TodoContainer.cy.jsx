@@ -22,4 +22,13 @@ describe("TodoContainer component", () => {
     cy.mount(<TodoContainer todos={todos} />);
     cy.getByCy("todo-header").should("have.text", "TODO LIST");
   });
+
+  it("says You dont have anything you need to do if todo list is empty", () => {
+    cy.mount(<TodoContainer todos={[]} />);
+    cy.getByCyLike("todo-0").should("not.exist");
+    cy.getByCy("todo-error").should(
+      "have.text",
+      "You dont have anything you need to do",
+    );
+  });
 });

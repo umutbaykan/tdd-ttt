@@ -6,9 +6,13 @@ const TodoContainer = ({ todos }) => {
   return (
     <div className="container todo">
       <h3 data-cy="todo-header">TODO LIST</h3>
-      {todos.map((entry, index) => (
-        <Todo key={index} text={entry.todo} index={index} isDone={false} />
-      ))}
+      {todos.length === 0 ? (
+        <p data-cy="todo-error">You dont have anything you need to do</p>
+      ) : (
+        todos.map((entry, index) => (
+          <Todo key={index} text={entry.todo} index={index} isDone={false} />
+        ))
+      )}
     </div>
   );
 };
