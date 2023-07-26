@@ -1,13 +1,20 @@
 import "./Todo.css";
 import propTypes from "prop-types";
 
-const Todo = ({ text, index }) => {
+const Todo = ({ text, index, isDone }) => {
+  const todoStatus = isDone ? "done" : "undone";
+
   return (
-    <p className="todo undone" data-cy={`todo-${index}`}>
+    <p data-cy={`todo-${index}`} className={`todo ${todoStatus}`}>
       {text}
     </p>
   );
 };
-Todo.propTypes = { text: propTypes.string, index: propTypes.number };
+
+Todo.propTypes = {
+  text: propTypes.string,
+  index: propTypes.number,
+  isDone: propTypes.bool,
+};
 
 export default Todo;
