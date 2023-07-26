@@ -14,7 +14,7 @@ const InputButton = ({ noteText }) => {
   };
 
   return (
-    <button onClick={handleClick()} data-cy="input-button">
+    <button onClick={handleClick} data-cy="input-button">
       Add Note!
     </button>
   );
